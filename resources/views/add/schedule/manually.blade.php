@@ -27,7 +27,7 @@
                 @csrf
                 <div class="form-group row mx-sm-3">
                     <label for="film" class="col-sm-2 col-form-label">Фильм</label>
-                    <div class="col-sm-4 ">
+                    <div class="col-sm-5 ">
                         <select class="form-control {{ $errors->has('film') ? ' is-invalid' : '' }}" name="film">
                             <option selected>Выберите фильм</option>
                             @foreach($films as $film)
@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-group row mx-sm-3">
                     <label for="hall" class="col-sm-2 col-form-label">Зал</label>
-                    <div class="col-sm-4 ">
+                    <div class="col-sm-5 ">
                         <select class="form-control {{ $errors->has('hall') ? ' is-invalid' : '' }}" name="hall">
                             @foreach($halls as $hall)
                                 <option value="{{$hall->ID_Hall}}">{{$hall->Name_Hall}}</option>
@@ -51,12 +51,12 @@
                 </div>
                 <div class="form-group row mx-sm-3">
                     <label for="timeS" class="col-sm-2 col-form-label">Новый сеанс</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-5">
                         <input type="text" class="form-control {{ $errors->has('timeS') ? ' is-invalid' : '' }}" name="timeS"  pattern="[0-9]{1,2}:[0-9]{2}" placeholder="10:00"/>
                     </div>
                 </div>
                 <div class="form-group row mx-3">
-                    <div class="col-md-6 offset-md-5">
+                    <div class="col-md-5 offset-md-5">
                         <button type="submit" class="btn btn-primary ml-3 mt-1 mb-3" id="add">Добавить</button>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                                 @csrf
                                 <div class="form-group row mx-sm-3 ">
                                     <label for="outRent" class="col-sm-3 col-form-label">Вывод с проката</label>
-                                    <div class="col-sm-4 ">
+                                    <div class="col-sm-6 ">
                                         <select class="form-control {{ $errors->has('outRent') ? ' is-invalid' : '' }}" name="outRent">
                                             <option selected>Выберите фильм</option>
                                             @foreach($films as $film)
@@ -117,7 +117,7 @@
 
                         <div class="form-group row mx-sm-3 ">
                             <label for="session" class="col-sm-3 col-form-label">Сеанс</label>
-                            <div class="col-sm-4 ">
+                            <div class="col-sm-6 ">
                                 <select class="form-control {{ $errors->has('session') ? ' is-invalid' : '' }}" name="session">
                                     <option selected>Выберите сеанс</option>
                                     @foreach($schedule as $session)

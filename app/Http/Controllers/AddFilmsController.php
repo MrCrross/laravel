@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\films;
 
@@ -15,7 +16,12 @@ class AddFilmsController extends Controller
      */
     public function create()
     {
-        return view('add.films.create');
+        if(Auth::user()) {
+            return view('add.films.create');
+        }
+        else {
+            return view('auth.login');
+        }
     }
 
     public function store(Request $request)

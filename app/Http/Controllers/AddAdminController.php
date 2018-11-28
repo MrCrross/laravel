@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\users;
 
@@ -15,11 +16,17 @@ class AddAdminController extends Controller
      */
     public function create()
     {
+        if(Auth::user()) {
         return view('add.regAdmin');
+        }
+        else {
+            return view('auth.login');
+        }
     }
 
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
