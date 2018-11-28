@@ -14,7 +14,7 @@ class AddFilmsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function index()
     {
         if(Auth::user()) {
             return view('add.films.create');

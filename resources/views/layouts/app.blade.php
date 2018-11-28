@@ -74,7 +74,7 @@ if(Auth::user()){
                                 <a class="nav-link text-light" href="{{ route('add.films.create') }}">{{ __('Добавить фильм') }} </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="{{ route('add.schedule.auto') }}">{{ __('Добавить расписание') }}</a>
+                                <a class="nav-link text-light" href="{{ route('add.schedule') }}">{{ __('Добавить расписание') }}</a>
                             </li>
                         </ul>
                 @endif
