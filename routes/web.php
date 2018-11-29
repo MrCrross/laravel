@@ -15,18 +15,15 @@ Auth::routes();
         Route::get('/schedule/{id}/{id_schedule}', 'ScheduleController@show')->name('schedule.show');
 //  Маршруты админа
         //  Добавить фильм
-        Route::get('/filmAdd', 'AddFilmsController@create')->name('add.films.create');
+        Route::get('/filmAdd', 'AddFilmsController@index')->name('add.films.create');
         Route::post('/filmAdd', 'AddFilmsController@store');
-        //  Добавить расписание программно
-        Route::get('/scheduleAutoAdd', 'ScheduleAutoController@create')->name('add.schedule.auto');
-        Route::post('/scheduleAutoAdd', 'ScheduleAutoController@store');
         //  Добавить расписание вручную
-        Route::get('/scheduleManAdd', 'ScheduleManuallyController@create')->name('add.manually');
-        Route::post('/scheduleManAdd', 'ScheduleManuallyController@store')->name('add.manually');
+        Route::get('/scheduleAdd', 'AddScheduleController@index')->name('add.schedule');
+        Route::post('/scheduleAdd', 'AddScheduleController@store')->name('add.schedule');
         //Удалить фильм с проката
-        Route::post('/scheduleManDelRent', 'ScheduleManuallyController@DelRent')->name('add.manually.outRent');
+        Route::post('/scheduleDelRent', 'AddScheduleController@DelRent')->name('add.schedule.outRent');
         //Удалить сеанс с проката
-        Route::post('/scheduleManDelS', 'ScheduleManuallyController@DelS')->name('add.manually.outS');
-        //  Регистрация админа
+        Route::post('/scheduleDelS', 'AddScheduleController@DelS')->name('add.schedule.outS');
+        // Регистрация админа
         Route::get('/regAdmin', 'AddAdminController@create')->name('add.regAdmin');
         Route::post('/regAdmin', 'AddAdminController@store');

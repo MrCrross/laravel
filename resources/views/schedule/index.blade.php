@@ -20,31 +20,31 @@
                 <ul>
                     <li class="row">
                         <label style="color:darkred">{{'Название: '}}</label>
-                        <label class="font-italic">{{$data->Name_Film}}</label>
+                        <label class="font-italic text-light">{{$data->Name_Film}}</label>
                     </li>
                     <li class="row">
                         <label style="color:darkred">{{'Продюсер: '}}</label>
-                        <label class="font-italic">{{$data->Producer}}</label>
+                        <label class="font-italic text-light">{{$data->Producer}}</label>
                     </li>
                     <li class="row">
                         <label style="color:darkred">{{'Страна: '}}</label>
-                        <label class="font-italic">{{$data->Country}}</label>
+                        <label class="font-italic text-light">{{$data->Country}}</label>
                     </li>
                     <li class="row">
                         <label style="color:darkred">{{'Длительность: '}}</label>
-                        <label class="font-italic">{{$data->Duration}}</label>
+                        <label class="font-italic text-light">{{$data->Duration}}</label>
                     </li>
                     <li class="row">
                         <label style="color:darkred">{{'Возрастное ограничение: '}}</label>
-                        <label class="font-italic">{{$data->Age_Limit}}</label>
+                        <label class="font-italic text-light">{{$data->Age_Limit}}</label>
                     </li>
                     <li class="row">
                         <label style="color:darkred">{{'Рейтинг: '}}</label>
-                        <label class="font-italic">{{$data->Rating}}</label>
+                        <label class="font-italic text-light">{{$data->Rating}}</label>
                     </li>
                     <li class="row">
                         <label style="color:darkred">{{'Описание: '}}</label>
-                        <label class="font-italic">{{$data->Description}}</label>
+                        <label class="font-italic text-light">{{$data->Description}}</label>
                     </li>
                     <label style="color:darkred;" >{{'Сеансы: '}}</label>
                     @foreach($schedule as $post)

@@ -35,31 +35,31 @@
                     <ul>
                         <li class="row">
                             <label style="color:darkred">{{'Название: '}}</label>
-                            <label class="font-italic">{{$post->Name_Film}}</label>
+                            <label class="font-italic text-light">{{$post->Name_Film}}</label>
                         </li>
                         <li class="row">
                             <label style="color:darkred">{{'Продюсер: '}}</label>
-                            <label class="font-italic">{{$post->Producer}}</label>
+                            <label class="font-italic text-light">{{$post->Producer}}</label>
                         </li>
                         <li class="row">
                             <label style="color:darkred">{{'Страна: '}}</label>
-                            <label class="font-italic">{{$post->Country}}</label>
+                            <label class="font-italic text-light">{{$post->Country}}</label>
                         </li>
                         <li class="row">
                             <label style="color:darkred">{{'Длительность: '}}</label>
-                            <label class="font-italic">{{$post->Duration}}</label>
+                            <label class="font-italic text-light">{{$post->Duration}}</label>
                         </li>
                         <li class="row">
                             <label style="color:darkred">{{'Возрастное ограничение: '}}</label>
-                            <label class="font-italic">{{$post->Age_Limit}}</label>
+                            <label class="font-italic text-light">{{$post->Age_Limit}}</label>
                         </li>
                         <li class="row">
                             <label style="color:darkred">{{'Рейтинг: '}}</label>
-                            <label class="font-italic">{{$post->Rating}}</label>
+                            <label class="font-italic text-light">{{$post->Rating}}</label>
                         </li>
                         <li class="row">
                             <label style="color:darkred">{{'Описание: '}}</label>
-                            <label class="font-italic">{{$post->Description}}</label>
+                            <label class="font-italic text-light">{{$post->Description}}</label>
                         </li>
                         <li class="row">
                         <label style="color:darkred;" >{{'День: '}}</label>
