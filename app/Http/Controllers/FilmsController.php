@@ -2,7 +2,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 class FilmsController extends Controller
 {
     /**
@@ -12,34 +13,11 @@ class FilmsController extends Controller
      */
     public function index()
     {
-        $films = DB::table('films')->get();
+        $films = DB::table('films')
+            ->get();
         return view('films.index')->with(['films'=>$films]);
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         $data=DB::table('films')
@@ -48,39 +26,15 @@ class FilmsController extends Controller
             ->where('schedule.ID_Film','=',$id)
             ->select('schedule.TimeS','schedule.id_schedule')
             ->get();
-        return view('films.show')->with(['data'=>$data,'schedule'=>$schedule]);
+        if(Auth::user()) {
+            $userRole = Auth::user()->id;
+            $role = DB::table('users')->find($userRole);
+            if($role->role == 1) {
+                return view('films.showAdmin')->with(['data' => $data, 'schedule' => $schedule]);
+            }
+            else { return view('films.show')->with(['data' => $data, 'schedule' => $schedule]); }
+        }
+        else { return view('films.show')->with(['data' => $data, 'schedule' => $schedule]); }
     }
 
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

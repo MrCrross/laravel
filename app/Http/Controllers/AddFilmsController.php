@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -17,7 +18,9 @@ class AddFilmsController extends Controller
     public function index()
     {
         if(Auth::user()) {
-            return view('add.films.create');
+            $genres = DB::table('genres')
+                ->get();
+            return view('add.films.create')->with(['genres'=>$genres]);
         }
         else {
             return view('auth.login');
@@ -31,6 +34,7 @@ class AddFilmsController extends Controller
             'Name' => 'required|string',
             'Prod' => 'required|string',
             'Country' => 'required|string',
+            'Genre' => 'required|string',
             'Dur' => 'required',
             'Age' => 'required',
             'Rat' => 'required',
@@ -49,6 +53,7 @@ class AddFilmsController extends Controller
         $reg -> Name_Film = $request->input('Name');
         $reg -> Producer = $request-> input('Prod');
         $reg -> Country = $request-> input('Country');
+        $reg -> Genres = $request-> input('Genre');
         $reg -> Duration = $request-> input('Dur');
         $reg -> Age_Limit = $request-> input('Age');
         $reg -> Rating = $request-> input('Rat');
@@ -59,48 +64,4 @@ class AddFilmsController extends Controller
         return redirect()->route('home');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

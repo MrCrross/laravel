@@ -27,3 +27,5 @@ Auth::routes();
         // Регистрация админа
         Route::get('/regAdmin', 'AddAdminController@create')->name('add.regAdmin');
         Route::post('/regAdmin', 'AddAdminController@store');
+
+        Route::post('/mail','MailController@mail')->name('tickets');

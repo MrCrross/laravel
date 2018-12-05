@@ -38,7 +38,7 @@ if(Auth::user()){
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app" >
+    <div id="app">
         <nav class="navbar navbar-expand-md navbar-laravel" style="background-image:url({{asset('storage/icon/menu_texture.jpg')}})">
             <div class="container" >
                 @if($auth==0)

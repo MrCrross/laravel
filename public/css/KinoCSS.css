@@ -42,6 +42,7 @@ body{
 
 .icon_link img{
     width: 180px;
+    height: 250px;
 
 }
 /*Панель "навигации"*/
@@ -80,21 +81,31 @@ body{
 }
 
 .display{
-    max-width: 40%;
-    margin-left: 25%;
-    margin-bottom: 2%;
+    width: 45rem;
+    margin-left: 15rem;
+    margin-bottom: .8rem;
     border: .2rem solid #6c757d;
     box-sizing: border-box;
     text-align: center;
 }
-
+.nameHall{
+    width: 60rem;
+    margin-left: 8rem;
+    margin-bottom: 1.2rem;
+    color: #3490dc;
+    font: 20px Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    border: .2rem solid #ffffff;
+    box-sizing: border-box;
+    text-align: center;
+}
 .hall{
     margin-top: .8rem;
-    margin-left: 15%;
+    margin-left: 15rem;
 }
 .row_hall{
     list-style-type: none;
-    width: 70%;
+    width: 43rem;
 }
 .num_left{
     text-align: center;
@@ -102,7 +113,7 @@ body{
     box-sizing: border-box;
     float:left;
     width: 25px;
-    height: 25px;
+    height: 22px;
 }
 
 .num_right{
@@ -111,12 +122,11 @@ body{
     box-sizing: border-box;
     float:right;
     width: 25px;
-    height: 25px;
+    height: 22px;
 }
 
 .row_column{
-    margin-left: 35%;
-    max-width: 70%;
+    margin-left: 6.5rem;
 }
 
 .column{
@@ -125,7 +135,16 @@ body{
     box-sizing: border-box;
     margin-left: .5rem;
     float:left;
-    width: 35px;
+    width: 30px;
+    height: 25px;
+}
+.columnBlock{
+    text-align: center;
+    border: 3px solid #3490dc;
+    box-sizing: border-box;
+    margin-left: .5rem;
+    float:left;
+    width: 30px;
     height: 25px;
 }
 .button{

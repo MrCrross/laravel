@@ -4,7 +4,7 @@
 @section('content')
     <ul class="nav nav-pills mb-1">
         <li class="nav-item">
-            <a class="nav-link" href="/films">{{'Фильмы'}}</a>
+            <a class="nav-link" href="{{ route('films.index') }}">{{'Фильмы'}}</a>
         </li>
     </ul>
     <hr color="#ffffff" />
@@ -20,32 +20,36 @@
         <div class="mt-2">
                     <ul>
                         <li class="row">
-                            <label style="color:darkred">{{'Название: '}}</label>
-                            <label class="font-italic text-light">{{$film->Name_Film}}</label>
+                            <label>{{'Название:'}} </label>
+                            <label class="font-italic text-light"> {{$film->Name_Film}}</label>
                         </li>
                         <li class="row">
-                            <label style="color:darkred">{{'Продюсер: '}}</label>
-                            <label class="font-italic text-light" >{{$film->Producer}}</label>
+                            <label >{{'Продюсер:'}} </label>
+                            <label class="font-italic text-light" > {{$film->Producer}}</label>
                         </li>
                         <li class="row">
-                            <label style="color:darkred">{{'Страна: '}}</label>
-                            <label class="font-italic text-light">{{$film->Country}}</label>
+                            <label >{{'Страна: '}} </label>
+                            <label class="font-italic text-light"> {{$film->Country}}</label>
                         </li>
                         <li class="row">
-                            <label style="color:darkred">{{'Длительность: '}}</label>
-                            <label class="font-italic text-light">{{$film->Duration}}</label>
+                            <label >{{'Жанр: '}} </label>
+                            <label class="font-italic text-light"> {{$film->Genres}}</label>
                         </li>
                         <li class="row">
-                            <label style="color:darkred">{{'Возрастное ограничение: '}}</label>
-                            <label class="font-italic text-light">{{$film->Age_Limit}}</label>
+                            <label >{{'Длительность: '}} </label>
+                            <label class="font-italic text-light"> {{$film->Duration}}</label>
                         </li>
                         <li class="row">
-                            <label style="color:darkred">{{'Рейтинг: '}}</label>
-                            <label class="font-italic text-light">{{$film->Rating}}</label>
+                            <label >{{'Возрастное ограничение: '}} </label>
+                            <label class="font-italic text-light"> {{$film->Age_Limit}}</label>
                         </li>
                         <li class="row">
-                            <label style="color:darkred">{{'Описание: '}}</label>
-                            <label class="font-italic text-light">{{$film->Description}}</label>
+                            <label >{{'Рейтинг: '}} </label>
+                            <label class="font-italic text-light"> {{$film->Rating}}</label>
+                        </li>
+                        <li class="row">
+                            <label >{{'Описание: '}} </label>
+                            <label class="font-italic text-light"> {{$film->Description}}</label>
                         </li>
                     </ul>
         </div>

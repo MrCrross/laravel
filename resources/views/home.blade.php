@@ -13,7 +13,7 @@
                 @php $i++ @endphp
                     <td>
                         <div>
-                            <a class="icon_link" href="{{ route('films.show',$film->id) }}}">
+                            <a class="icon_link" href="{{ route('films.show',$film->id) }}">
                                 <img class= "img-thumbnail" src="{{$film->Icon}}"><br>
                                 <label class="font-italic" >{{$film->Name_Film}}</label>
                             </a>

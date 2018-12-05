@@ -1,11 +1,14 @@
 $("document").ready(function () {
 // Выбор мест в зале
     $(".column").click(function () {
-
-        if($(this).css('border-color')=='rgb(255, 0, 0)'){
+        if($(this).css('border-color')==='rgb(255, 0, 0)'){
             $(this).css('border-color','#6c757d');
-        }else{
+        }
+        else if($(this).css('border-color')==='rgb(108, 117, 125)'){
             $(this).css('border-color','red');
+        }
+        else if($(this).css('border-color')==='rgb(52, 144, 220)'){
+            $(this).css('border-color','#3490dc');
         }
 
     })
@@ -22,7 +25,7 @@ $("document").ready(function () {
             strData = '';
     // Заполнение формы
         $(".column").each(function() {
-            if($(this).css('border-color')=='rgb(255, 0, 0)'){
+            if($(this).css('border-color')==='rgb(255, 0, 0)'){
                 col = $(this).data('col');
                 row = $(this).data('row');
                 price = $(this).data('price');
@@ -32,14 +35,14 @@ $("document").ready(function () {
                 sum += price;
             }
         })
-        $('#inputData').val(strData +'Сумма к оплате: '+sum);
+        $('#inputData').val(strData+'Сумма к оплате:'+sum);
         $('#buy').modal();
     })
 
 // Отмена обработки зала
     $(".close").click(function () {
         $(".column").each(function () {
-            if($(this).css('border-color')=='rgb(255, 0, 0)'){
+            if($(this).css('border-color')==='rgb(255, 0, 0)'){
                 $(this).css('border-color','#6c757d');
             }
         })

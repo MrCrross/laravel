@@ -4,7 +4,7 @@
 @section('content')
     <ul class="nav nav-pills mb-1">
         <li class="nav-item">
-            <a class="nav-link" href="/schedule">{{'Расписание'}}</a>
+            <a class="nav-link" href="{{ route('schedule.index') }}">{{'Расписание'}}</a>
         </li>
     </ul>
     <hr color="#ffffff" />
@@ -19,34 +19,39 @@
             <div class="mt-2">
                 <ul>
                     <li class="row">
-                        <label style="color:darkred">{{'Название: '}}</label>
+                        <label >{{'Название:'}} </label>
                         <label class="font-italic text-light">{{$data->Name_Film}}</label>
                     </li>
                     <li class="row">
-                        <label style="color:darkred">{{'Продюсер: '}}</label>
-                        <label class="font-italic text-light">{{$data->Producer}}</label>
+                        <label >{{'Продюсер:'}} </label>
+                        <label class="font-italic text-light" >{{$data->Producer}}</label>
                     </li>
                     <li class="row">
-                        <label style="color:darkred">{{'Страна: '}}</label>
+                        <label >{{'Страна: '}} </label>
                         <label class="font-italic text-light">{{$data->Country}}</label>
                     </li>
                     <li class="row">
-                        <label style="color:darkred">{{'Длительность: '}}</label>
+                        <label >{{'Жанр: '}} </label>
+                        <label class="font-italic text-light">{{$data->Genres}}</label>
+                    </li>
+                    <li class="row">
+                        <label >{{'Длительность: '}} </label>
                         <label class="font-italic text-light">{{$data->Duration}}</label>
                     </li>
                     <li class="row">
-                        <label style="color:darkred">{{'Возрастное ограничение: '}}</label>
+                        <label >{{'Возрастное ограничение: '}} </label>
                         <label class="font-italic text-light">{{$data->Age_Limit}}</label>
                     </li>
                     <li class="row">
-                        <label style="color:darkred">{{'Рейтинг: '}}</label>
+                        <label >{{'Рейтинг: '}} </label>
                         <label class="font-italic text-light">{{$data->Rating}}</label>
                     </li>
                     <li class="row">
-                        <label style="color:darkred">{{'Описание: '}}</label>
+                        <label >{{'Описание: '}} </label>
                         <label class="font-italic text-light">{{$data->Description}}</label>
                     </li>
-                    <label style="color:darkred;" >{{'Сеансы: '}}</label>
+                    <li class="row">
+                    <label >{{'Сеансы: '}}</label>
                     @foreach($schedule as $post)
                         @if($data->id == $post->ID_Film)
                             <a class="btn-group mb-1 pl-2 "  style="text-decoration:none;" href="/schedule/{{$data->id}}/{{$post->id_schedule}}">
@@ -56,6 +61,7 @@
                             </a>
                         @endif
                     @endforeach
+                    </li>
                 </ul>
             </div>
             <hr color="#000000" />
